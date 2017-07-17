@@ -1,0 +1,30 @@
+/**
+  Theme Name: MY Theme
+  Theme URL : http://edgebootstrap.com/
+  Author    : Shamim khan
+  Author URI: http://edgebootstrap.com
+  developed : edgebootstrap
+  Version   : 1.0.1
+**/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Header styles
+# Footer styles
+--------------------------------------------------------------*/
+
+@import '_allMixin.scss';
+@import '_veriables.scss';
+
+/*my first css*/ 
+
+/****************
+ Header styles
+ ***************/
+@import 'contents/_header.scss';
+
+
+/****************
+ Footer styles
+ ***************/
+ @import 'contents/_footer.scss';
