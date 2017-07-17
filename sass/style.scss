@@ -11,6 +11,7 @@
 ----------------------------------------------------------------
 # Header styles
 # Footer styles
+# pageloader & backtotop
 --------------------------------------------------------------*/
 
 @import '_allMixin.scss';
@@ -24,7 +25,13 @@
 @import 'contents/_header.scss';
 
 
-/****************
+/***************
  Footer styles
- ***************/
- @import 'contents/_footer.scss';
+***************/
+@import 'contents/_footer.scss';
+
+
+/***************
+ pageloader
+***************/
+@import 'contents/_default.scss';
