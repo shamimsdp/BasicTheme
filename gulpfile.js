@@ -39,16 +39,16 @@ gulp.task('sass', function() {
       }
     }))
     .pipe(sass().on('error', sass.logError)) // Converts Sass to CSS with gulp-sass
-    // .pipe(autoprefixer({
-    //     browsers: ['last 2 versions'],
-    //     cascade: false
-    // }))
+    .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+    }))
     .pipe(cssbeautify())
     // .pipe(sourcemaps.init())
     //   .pipe(concat('style.css'))
     // .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest('dist/css'))
-    // .pipe(browserSync.stream());
+    .pipe(browserSync.stream());
 });
 
 
@@ -58,11 +58,11 @@ gulp.task('sass', function() {
 ////////////////////////////////
 
 gulp.task('watch', function(){
-    // browserSync.init({
-    //     server: {
-    //         baseDir: "dist/"
-    //     }
-    // });
+    browserSync.init({
+        server: {
+            baseDir: "dist/"
+        }
+    });
     
     gulp.watch('sass/**/*.scss', ['sass'])
     gulp.watch('*.html', ['build'])
@@ -90,7 +90,7 @@ gulp.task('images', function() {
 //   build html files
 ////////////////////////////////
 
-gulp.task('build', ['images'], function(){
+gulp.task('build', function(){
     //Copy all images, css, js, vendor files
 
     var filesToMove = [
@@ -107,8 +107,8 @@ gulp.task('build', ['images'], function(){
 
     return gulp.src(['*.html', '!header.html', '!breadcrumb.html', '!footer.html'])
     .pipe(include())
-    .pipe(gulp.dest('./dist/'));
-
+    .pipe(gulp.dest('./dist/'))
+    .pipe(browserSync.stream());
 });
 
 
